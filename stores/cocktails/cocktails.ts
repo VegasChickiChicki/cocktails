@@ -9,11 +9,12 @@ import { defineStore } from "pinia";
 import { modifyCocktailItem } from "./cocktails.utils";
 
 export const useCocktailsStore = defineStore("cocktailsStore", () => {
+  const { $apiCocktails } = useNuxtApp();
   const cocktails = ref<Partial<Record<TCocktailType, TCocktail>>>({});
 
   const fetchCocktail = async (cocktailType: TCocktailType): Promise<void> => {
-    await $fetch<TCocktailResponse>(
-      `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktailType}`,
+    await $apiCocktails<TCocktailResponse>(
+      `/1/search.php?s=${cocktailType}`,
       {
         method: "GET",
       },

@@ -18,4 +18,9 @@ export default defineNuxtConfig({
       },
     },
   },
+  runtimeConfig: {
+    public: {
+      apiCocktailsUrl: process.env.API_COCKTACKS_URL,
+    }
+  }
 });
