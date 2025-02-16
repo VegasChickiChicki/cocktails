@@ -1,3 +1,5 @@
+[![Lint Status](https://github.com/VegasChickiChicki/cocktails/actions/workflows/lint.yml/badge.svg)](https://github.com/VegasChickiChicki/cocktails/actions/workflows/lint.yml)
+
 # Nuxt Minimal Starter
 
 Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
