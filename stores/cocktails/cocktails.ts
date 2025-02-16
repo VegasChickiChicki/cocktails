@@ -13,12 +13,9 @@ export const useCocktailsStore = defineStore("cocktailsStore", () => {
   const cocktails = ref<Partial<Record<TCocktailType, TCocktail>>>({});
 
   const fetchCocktail = async (cocktailType: TCocktailType): Promise<void> => {
-    await $apiCocktails<TCocktailResponse>(
-      `/1/search.php?s=${cocktailType}`,
-      {
-        method: "GET",
-      },
-    )
+    await $apiCocktails<TCocktailResponse>(`/1/search.php?s=${cocktailType}`, {
+      method: "GET",
+    })
       .then((response: TCocktailResponse) => {
         cocktails.value[cocktailType] = modifyCocktailItem(response);
       })
