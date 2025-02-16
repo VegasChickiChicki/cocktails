@@ -1,77 +1,66 @@
 [![Lint Status](https://github.com/VegasChickiChicki/cocktails/actions/workflows/lint.yml/badge.svg)](https://github.com/VegasChickiChicki/cocktails/actions/workflows/lint.yml)
 
-# Nuxt Minimal Starter
+# Cocktails
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+**Cocktails** — это веб-приложение для просмотра и поиска рецептов коктейлей. Проект построен на базе Nuxt.js с использованием Vue, TypeScript и SCSS, что обеспечивает современную архитектуру и удобство разработки.
 
-## Setup
+## О проекте
 
-Make sure to install dependencies:
+В данном проекте реализовано динамическое отображение информации о коктейлях. Каждый коктейль представлен на своей странице, где вы можете ознакомиться с ингредиентами, инструкциями по приготовлению и другой полезной информацией. Проект является расширенной версией Nuxt Minimal Starter и настроен для быстрого старта разработки и легкого развёртывания.
 
-```bash
-# npm
-npm install
+## Технологии
 
-# pnpm
-pnpm install
+* Nuxt.js – фреймворк для разработки SSR и SPA приложений на Vue.
+* Vue.js – прогрессивный JavaScript-фреймворк для создания пользовательских интерфейсов.
+* TypeScript – статически типизированный надстройка над JavaScript.
+* SCSS – препроцессор для CSS для более удобного написания стилей.
 
-# yarn
-yarn install
+## Структура проекта
 
-# bun
-bun install
+```
+assets/           - Стили и статические ресурсы
+components/       - Vue-компоненты для переиспользуемых UI-элементов
+constants/        - Файлы с константами, используемыми в проекте
+layouts/          - Макеты страниц приложения
+middleware/       - Промежуточное ПО для обработки маршрутов
+pages/[cocktail]/ - Динамические страницы для каждого коктейля
+public/           - Публичные статические файлы (изображения, иконки и т.д.)
+server/           - Серверная логика и API-эндпоинты
+stores/cocktails/ - Хранилище состояния (например, с использованием Pinia) для управления данными коктейлей
+utils/            - Утилиты и вспомогательные функции
 ```
 
-## Development Server
+## Установка
 
-Start the development server on `http://localhost:3000`:
+1. Клонируйте репозиторий:
 
-```bash
-# npm
-npm run dev
+    ```git clone https://github.com/VegasChickiChicki/cocktails.git```
+2. Перейдите в директорию проекта:
 
-# pnpm
-pnpm dev
+   ```cd cocktails```
+3. Установите зависимости:
 
-# yarn
-yarn dev
+    ```# С использованием npm
+    npm install
+    
+    # Или с использованием yarn
+    yarn install
+    
+    # Или с использованием pnpm
+    pnpm install```
 
-# bun
-bun run dev
-```
+## Запуск в режиме разработки
 
-## Production
+Запустите локальный сервер разработки:
 
-Build the application for production:
+### С использованием npm
+```npm run dev```
 
-```bash
-# npm
-npm run build
+### Или с использованием yarn
+```yarn dev```
 
-# pnpm
-pnpm build
+## Деплой
+Для деплоя проекта ознакомьтесь с документацией Nuxt, где описаны различные варианты развёртывания (например, на Vercel, Netlify и т.д.).
 
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Контакты
+Автор: [VegasChickiChicki](https://github.com/VegasChickiChicki)
