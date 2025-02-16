@@ -1,0 +1,7 @@
+@use "../variables/breakpoints" as breakpoints;
+
+@mixin media-mobile {
+  @media (width < breakpoints.$desktop) {
+    @content;
+  }
+}
