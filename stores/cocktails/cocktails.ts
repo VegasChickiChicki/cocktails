@@ -13,9 +13,11 @@ export const useCocktailsStore = defineStore("cocktailsStore", () => {
 
   const fetchCocktail = async (cocktailType: TCocktailType): Promise<void> => {
     await $fetch<TCocktailResponse>(
-        `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktailType}`, {
-          method: 'GET'
-      })
+      `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktailType}`,
+      {
+        method: "GET",
+      },
+    )
       .then((response: TCocktailResponse) => {
         cocktails.value[cocktailType] = modifyCocktailItem(response);
       })
