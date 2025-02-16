@@ -1,4 +1,3 @@
-import type { AxiosResponse } from "axios";
 import type {
   TCocktailType,
   TCocktailResponse,
@@ -6,7 +5,6 @@ import type {
 } from "./cocktails.types";
 
 import { defineStore } from "pinia";
-import axios from "axios";
 
 import { modifyCocktailItem } from "./cocktails.utils";
 
@@ -14,12 +12,12 @@ export const useCocktailsStore = defineStore("cocktailsStore", () => {
   const cocktails = ref<Partial<Record<TCocktailType, TCocktail>>>({});
 
   const fetchCocktail = async (cocktailType: TCocktailType): Promise<void> => {
-    await axios
-      .get<TCocktailResponse>(
-        `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktailType}`,
-      )
-      .then((response: AxiosResponse<TCocktailResponse>) => {
-        cocktails.value[cocktailType] = modifyCocktailItem(response.data);
+    await $fetch<TCocktailResponse>(
+        `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktailType}`, {
+          method: 'GET'
+      })
+      .then((response: TCocktailResponse) => {
+        cocktails.value[cocktailType] = modifyCocktailItem(response);
       })
       .catch((error) => {
         console.log("Cocktails loading error", error);
